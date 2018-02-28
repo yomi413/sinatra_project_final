@@ -6,15 +6,14 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    set :session_secret, 'cars_collection'
+    set :session_secret, "cars_collection"
   end
 
   get '/' do 
     erb :index
   end
 
-  helpers do 
-    
+  helpers do
     def logged_in?
       !!current_user
     end
@@ -22,6 +21,6 @@ class ApplicationController < Sinatra::Base
     def current_user
       @current_user ||= User.find(session[:user_id]) if session[:user_id]
     end
-  end 
+  end
 
-end
+end 
