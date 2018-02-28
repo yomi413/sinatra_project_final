@@ -1,12 +1,13 @@
 <h1>Edit Your Car</h1>
 
-<form action="/cars/<%= @car.id %>/edit" method="post">
+<form action="/cars/<%= @car.id %>" method="post">
+  <input type="hidden" name="_method" id="hidden" value="patch">
 
-  Edit Make: <input type="text" name="make" value="<%= @car.make %>">
+  Edit Make: <input type="text" name="make" value="<%= @car.make %>"></input><br></br>
 
-  Edit Model: <input type="text" name="model" value="<%= @car.model %>">
+  Edit Model: <input type="text" name="model" value="<%= @car.model %>"></input><br></br>
 
-  Edit Year: <input type="text" name="year" value="<%= @car.year %>">
+  Edit Year: <input type="text" name="year" value="<%= @car.year %>"></input><br></br>
 
   <input type="submit" name="submit">
 

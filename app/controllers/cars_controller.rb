@@ -24,16 +24,22 @@ class CarsController < ApplicationController
 
   get '/cars/:id/edit' do
     @car = Car.find_by(id: params[:id])
-    erb :'/cars/edit_car'
+
+    if logged_in?
+      erb :'/cars/edit_car'
+    else
+      redirect to '/login'
+    end
   end
 
-  post '/cars/:id' do
-    @car = Car.find_by(id: params[:id])
+  patch '/cars/:id' do
+    @car = current_user.cars.find_by(id: params[:id])
 
-    if @car
+    if @car && @car.update(make: params[:make], model: params[:model], year: params[:year])
       redirect to '/cars'
+    else
+      redirect to "/cars/#{@car.id}/edit"
     end
-
 
   end
 
