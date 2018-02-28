@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
   get '/signup' do 
-    erb :'/users/signup'
+    if logged_in?
+      redirect to '/cars'
+    else
+      erb :'/users/signup'
+    end
   end
 
   post '/signup' do 
@@ -10,7 +14,11 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id 
       redirect to '/cars'
+    else
+      redirect to '/signup'
     end
   end
+
+
 
 end
