@@ -33,8 +33,8 @@ class CarsController < ApplicationController
   end
 
   patch '/cars/:id' do
-    @car = current_user.cars.find_by(id: params[:id])
-
+    @car = Car.find_by(id: params[:id])
+    # binding.pry
     if @car && @car.update(make: params[:make], model: params[:model], year: params[:year])
       redirect to '/cars'
     else
@@ -42,5 +42,7 @@ class CarsController < ApplicationController
     end
 
   end
+
+
 
 end
