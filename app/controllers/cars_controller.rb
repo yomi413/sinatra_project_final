@@ -10,11 +10,16 @@ class CarsController < ApplicationController
   end
 
   post '/cars' do
-    @car = Car.new(make: params[:make], model: params[:model], year: params[:year])
+    @car = Car.new(make: params[:make], model: params[:model], year: params[:year], user: current_user)
 
     if @car.save
       redirect to '/cars'
     end
+  end
+
+  get '/cars/:id' do
+    @car = Car.find_by(id: params[:id])
+    erb :'/cars/show_car'
   end
 
 end
