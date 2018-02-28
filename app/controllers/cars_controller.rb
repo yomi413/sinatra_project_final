@@ -9,4 +9,12 @@ class CarsController < ApplicationController
     erb :'/cars/new_car'
   end
 
+  post '/cars' do
+    @car = Car.new(make: params[:make], model: params[:model], year: params[:year])
+
+    if @car.save
+      redirect to '/cars'
+    end
+  end
+
 end
