@@ -1,1 +1,13 @@
-edit_car.erb
+<h1>Edit Your Car</h1>
+
+<form action="/cars/<%= @car.id %>/edit" method="post">
+
+  Edit Make: <input type="text" name="make" value="<%= @car.make %>">
+
+  Edit Model: <input type="text" name="model" value="<%= @car.model %>">
+
+  Edit Year: <input type="text" name="year" value="<%= @car.year %>">
+
+  <input type="submit" name="submit">
+
+</form>
