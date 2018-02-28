@@ -1,1 +1,9 @@
 <h1>All the Cars</h1>
+
+<ul>
+
+  <% Car.all.each do |car| %>
+    <li><%= car.make %> <%= car.model %> (<%= car.year %>)</li>
+  <% end %>
+
+</ul>
