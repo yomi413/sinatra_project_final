@@ -1,2 +1,5 @@
 <p><%= @car.make %> <%= @car.model %> <%= @car.year %></p>
 
+<form action="/cars/<%= @car.id %>/edit">
+  <input type="submit" value="Edit Car">
+</form>
