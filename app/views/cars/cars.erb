@@ -3,10 +3,11 @@
 <ul>
 
   <% Car.all.each do |car| %>
-    
+    <% if car.user_id == @user.id %>
       <li><a href="/cars/<%= car.id %>"><%= car.make %> <%= car.model %> (<%= car.year %>)</a></li>
-    
-
+    <% else %>
+      <li><%= car.make %> <%= car.model %> (<%= car.year %>)</li>
+    <% end %>
   <% end %>
 
 </ul>

@@ -6,6 +6,7 @@ class CarsController < ApplicationController
   end 
 
   get '/cars/new' do
+    @car = Car.find_by(make: params[:make])
     erb :'/cars/new_car'
   end
 
@@ -41,6 +42,17 @@ class CarsController < ApplicationController
       redirect to "/cars/#{@car.id}/edit"
     end
 
+  end
+
+  get '/cars/:id/delete' do
+    @car = current_user.cars.find_by(id: params[:id])
+
+    if @car && logged_in?
+      @car.destroy
+      redirect to '/cars'
+    else
+      redirect to '/login'
+    end
   end
 
 
