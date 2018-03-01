@@ -11,4 +11,7 @@
   
 </form>
 
-<p>Or <a href="/signup">Sign Up</a> if you do not have an account.</p>
+<h3><% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %> 
+<a href="/signup">Sign Up</a> if you do not have an account.</h3>

@@ -15,6 +15,8 @@ class CarsController < ApplicationController
 
     if @car.save
       redirect to '/cars'
+    else
+      redirect to '/cars/new'
     end
   end
 
@@ -35,7 +37,7 @@ class CarsController < ApplicationController
 
   patch '/cars/:id' do
     @car = Car.find_by(id: params[:id])
-    # binding.pry
+    
     if @car && @car.update(make: params[:make], model: params[:model], year: params[:year])
       redirect to '/cars'
     else
@@ -54,7 +56,5 @@ class CarsController < ApplicationController
       redirect to '/login'
     end
   end
-
-
 
 end

@@ -1,11 +1,8 @@
 class UsersController < ApplicationController
+  use Rack::Flash
 
   get '/signup' do 
-    # if logged_in?
-    #   redirect to '/cars'
-    # else
-      erb :'/users/signup'
-    # end
+    erb :'/users/signup'
   end
 
   post '/signup' do 
@@ -20,11 +17,7 @@ class UsersController < ApplicationController
   end
 
   get '/login' do
-    if logged_in?
-      redirect to '/cars'
-    else
-      erb :'/users/login'
-    end
+    erb :'/users/login'
   end
 
   post '/login' do 
@@ -33,6 +26,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect to '/cars'
     else
+      flash[:message] = "Username and/or password not valid. Try again or"
       redirect to '/login'
     end
   end
@@ -41,5 +35,7 @@ class UsersController < ApplicationController
     session.clear
     redirect to '/'
   end
+
+  
 
 end

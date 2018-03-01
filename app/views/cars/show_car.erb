@@ -1,5 +1,12 @@
+<h2>Would you like to edit or delete your car?</h2>
+
+
 <p><%= @car.make %> <%= @car.model %> <%= @car.year %></p>
 
 <form action="/cars/<%= @car.id %>/edit">
   <input type="submit" value="Edit Car">
+</form>
+
+<form action="/cars/<%= @car.id %>/delete">
+  <input type="submit" value="Delete Car">
 </form>
