@@ -3,7 +3,7 @@
 <ul>
 
   <% Car.all.each do |car| %>
-    <% if car.user_id == @user.id %>
+     <% if car.user_id == @user.id %>
       <li><a href="/cars/<%= car.id %>"><%= car.make %> <%= car.model %> (<%= car.year %>)</a></li>
     <% else %>
       <li><%= car.make %> <%= car.model %> (<%= car.year %>)</li>
@@ -12,6 +12,16 @@
 
 </ul>
 
-<p><a href="/cars/new">Create New</a> or 
+<br></br>
 
-<a href="/logout">Log Out</a></p>
+
+  
+<p><a href="/cars/new">Create New</a> - Creates a new car</p>
+<br></br>
+
+<p><a href="/logout">Log Out</a> - Logs out current user</p>
+<br></br>
+
+<p><a href="/users/<%= @user.id %>/delete">Delete Account</a> - Deletes your account</p>
+<br></br>
+  

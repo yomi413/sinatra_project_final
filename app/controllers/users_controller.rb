@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
   post '/login' do 
     @user = User.find_by(username: params[:username])
+    
     if !@user.nil? && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect to '/cars'
@@ -36,6 +37,15 @@ class UsersController < ApplicationController
     erb :'/users/logout'
   end
 
+  get '/users/:id/delete' do
+    @user = User.find_by(id: params[:id])
+
+    if @user && logged_in?
+      @user.destroy
+      redirect to '/'
+    end
+
+  end
 
 
 end
