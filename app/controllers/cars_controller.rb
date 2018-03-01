@@ -43,7 +43,7 @@ class CarsController < ApplicationController
 
   get '/cars/:id/edit' do
     @car = Car.find_by(id: params[:id])
-    
+
     if logged_in?
       erb :'/cars/edit_car'
     else
@@ -59,7 +59,6 @@ class CarsController < ApplicationController
     else
       redirect to "/cars/#{@car.id}/edit"
     end
-
   end
 
   get '/cars/:id/delete' do
