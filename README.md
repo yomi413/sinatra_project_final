@@ -1,6 +1,6 @@
-# sinatra_project_final
+# SINATRA FINAL PROJECT
 
-CARS COLLECTION
+# CARS COLLECTION
 
 Welcome to my final Sinatra Project. This application allows users to take the following actions:
 
@@ -15,7 +15,7 @@ Welcome to my final Sinatra Project. This application allows users to take the f
   5. Delete only entries they entered and saved to the database.
 
 
-HOW TO USE
+# HOW TO USE
 
 To use this app, please follow the following instructions:
 
