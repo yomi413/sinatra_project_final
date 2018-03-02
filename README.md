@@ -1,6 +1,6 @@
 # SINATRA FINAL PROJECT
 
-# CARS COLLECTION
+## Cars Collection
 
 Welcome to my final Sinatra Project. This application allows users to take the following actions:
 
@@ -15,7 +15,7 @@ Welcome to my final Sinatra Project. This application allows users to take the f
   5. Delete only entries they entered and saved to the database.
 
 
-# HOW TO USE
+## Run the Program
 
 To use this app, please follow the following instructions:
 
@@ -24,5 +24,10 @@ To use this app, please follow the following instructions:
   b. Run `bundle install`; and
 
   c. Run `shotgun` to start the server.
+
+
+## Contributing 
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/yomi413/sinatra_project_final. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
 Enjoy!
