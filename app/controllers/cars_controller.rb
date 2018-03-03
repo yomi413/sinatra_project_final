@@ -27,6 +27,7 @@ class CarsController < ApplicationController
     if @car.save
       redirect to '/cars'
     else
+      flash[:message] = "Please fill in the blanks. All information in required."
       redirect to '/cars/new'
     end
   end

@@ -11,3 +11,7 @@
   <input type="submit" name="submit">
 
 </form>
+
+<h4><% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %></h4>
