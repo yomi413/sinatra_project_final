@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228065159) do
+ActiveRecord::Schema.define(version: 20180303180038) do
 
   create_table "cars", force: :cascade do |t|
     t.string "make"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20180228065159) do
     t.string "username"
     t.string "password"
     t.string "password_digest"
+    t.string "email"
   end
 
 end
