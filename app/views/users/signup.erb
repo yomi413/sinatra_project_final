@@ -18,3 +18,7 @@
 </form>
 
 <h4><a href="/login">Log In</a> if you have an existing account.</h4>
+
+<h4><% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %></h4>

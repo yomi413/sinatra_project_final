@@ -12,6 +12,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect to '/cars'
     else
+      flash[:message] = "***Please fill in the blanks. All information in required.***"
       redirect to '/signup'
     end
   end
