@@ -58,7 +58,8 @@ class CarsController < ApplicationController
     if @car && @car.update(make: params[:make], model: params[:model], year: params[:year])
       redirect to '/cars'
     else
-      redirect to "/cars/#{@car.id}/edit"
+      flash[:message] = "You are not allowed to make changes to this entry."
+      redirect to "/cars/#{params[:id]}/edit"
     end
   end
 
