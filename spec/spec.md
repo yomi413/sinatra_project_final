@@ -10,14 +10,14 @@ Specs:
     (b) Username: charlie, Password: birthday
     (c) Username: mira, Password: vacation
     (d) Username: danny, Password: lightning
-- [x] Ensure that users can't modify content created by other users - Done. Users can only modify their entries, which appear as links. They can view other entries when they log in, but cannon modify them.
+- [x] Ensure that users can't modify content created by other users - Done. Users can only modify their entries, which appear as links. They can view other entries when they log in, but cannot modify them.
 - [x] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying - Done. The Cars Controller allows for the creation, reading/viewing, updating/editing and deleting of each car.
 - [x] Include user input validations - Done. Users must fill in all blanks before proceeding. In addition, during login the user's input must correctly match what was saved to the database.
-- [ ] Display validation failures to user with error message (example form URL e.g. /posts/new)
+- [x] Display validation failures to user with error message (example form URL e.g. /posts/new) - Using flash messages where input is not valid.
 - [x] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code - Done. 
 
 Confirm
 - [x] You have a large number of small Git commits - Done.
 - [x] Your commit messages are meaningful - Done.
-- [x] You made the changes in a commit that relate to the commit message
+- [x] You made the changes in a commit that relate to the commit message - Done.
 - [x] You don't include changes in a commit that aren't related to the commit message - Done.
