@@ -9,8 +9,12 @@
 
   Edit Year: <input type="text" name="year" value="<%= @car.year %>"></input><br></br>
 
-  <input type="submit" name="submit">
+  <input type="submit" name="submit"> 
 
+</form>
+
+<form action="/cars">
+  <input type="submit" value="Go Back">
 </form>
 
 <h4><% if flash.has?(:message) %>
