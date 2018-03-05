@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect to '/cars'
     else
-      flash[:message] = "***Please fill in the blanks. All information in required.***"
+      flash[:message] = "Please fill in the blanks. All information in required."
       redirect to '/signup'
     end
   end
@@ -45,7 +45,6 @@ class UsersController < ApplicationController
       @user.destroy
       redirect to '/'
     end
-
   end
 
 end
