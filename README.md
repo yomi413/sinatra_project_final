@@ -15,11 +15,10 @@ Welcome to my final Sinatra Project! This application allows users to take the f
 
 To use this app, please follow the following instructions:
 
-  a. Clone this repository (https://github.com/yomi413/sinatra_project_final) and save it locally;
-
-  b. Run `bundle install`; and
-
-  c. Run `shotgun` to start the server.
+  1. Clone this repository (https://github.com/yomi413/sinatra_project_final) and save it locally;
+  2. Run `bundle install`; 
+  3. Run `rake db:migrate`; and
+  4. Run `shotgun` to start the server.
 
 
 ## Contributing 
