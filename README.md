@@ -2,7 +2,7 @@
 
 ## Cars Collection
 
-Welcome to my final Sinatra Project! This application allows users to take the following actions:
+Welcome to my final Sinatra Project! This application allows users to create and store a collection of cars.  Users are allowed to take the following actions:
 
   1. Signup for a new account, log in and log out;
   2. Add/create individual car entries to be saved to a database;
