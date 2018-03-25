@@ -22,7 +22,7 @@ class CarsController < ApplicationController
   end
 
   post '/cars' do
-    @car = Car.new(make: params[:make], model: params[:model], year: params[:year], user: current_user)
+    @car = Car.users.build(make: params[:make], model: params[:model], year: params[:year], user: current_user)
 
     if @car.save
       redirect to '/cars'
