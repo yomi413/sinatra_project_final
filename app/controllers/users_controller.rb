@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do #M V C
-    @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], username: params[:username], password: params[:password])
+    @user = User.new(full_name: params[:full_name], username: params[:username], password: params[:password])
 
     if @user.save
       session[:user_id] = @user.id
