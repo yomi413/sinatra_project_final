@@ -1,12 +1,50 @@
+<style>
+table {
+    font-family: times, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+</style>
+
+
 <h1>Welcome, <%= @user.first_name %>!</h1>
 
-<ul>
+<p>Below please find a table of all cars on the database.  To edit any of your enties see the list further below.</p>
+
+<h3>List of All Cars</h3>
+<table>
+  <tr>
+    <th>Car Make</th>
+    <th>Car Model</th>
+    <th>Car Year</th>
+  </tr>
+
+  
   <% Car.all.each do |car| %>
-     <% if car.user_id == @user.id %>
-      <li><a href="/cars/<%= car.id %>"><%= car.make %> <%= car.model %> (<%= car.year %>)</a></li>
-    <% else %>
-      <li><%= car.make %> <%= car.model %> (<%= car.year %>)</li>
-    <% end %>
+    <tr>
+      <td><%= car.make %></td>
+      <td><%= car.model %></td>
+      <td><%= car.year %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h3><%= @user.first_name %>'s List of Cars</h3>
+
+  <p>To edit or delete any of your cars, please click the their respective link.</p>
+
+<ul>
+  <% @user.cars.each do |car| %>
+    <li>
+      <a href="/cars/<%= car.id %>"><%= car.make %> <%= car.model %> (<%= car.year %>)</a>
+    </li>
   <% end %>
 </ul>
 
@@ -17,5 +55,3 @@
 <p><a href="/logout">Log Out</a> - Logs out current user</p>
 
 <p>Delete Account</a> - Deletes your account</p>
-
-  
