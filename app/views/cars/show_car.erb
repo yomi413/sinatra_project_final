@@ -3,10 +3,25 @@
 
 <p><%= @car.make %> <%= @car.model %> <%= @car.year %></p>
 
-<form action="/cars/<%= @car.id %>/edit">
-  <input type="submit" value="Edit Car">
-</form>
+<div class="buttons">
+  <p>
+    <span>
+      <form action="/cars/<%= @car.id %>/edit">
+        <input type="submit" value="Edit Car">
+      </form>
+    </span>
+  
+    <span>
+      <form action="/cars/<%= @car.id %>/delete">
+        <input type="submit" value="Delete Car">
+      </form>
+    </span>
+  
+    <span>
+      <form action="/cars">
+        <input type="submit" value="Go Back">
+      </form>
+    </span>
+  </p>
+</div>
 
-<form action="/cars/<%= @car.id %>/delete">
-  <input type="submit" value="Delete Car">
-</form>
