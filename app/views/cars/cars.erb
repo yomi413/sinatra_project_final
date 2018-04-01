@@ -27,13 +27,11 @@ td, th {
   </tr>
 
   <% Car.all.each do |car| %>
-    <% if car.duplicate? %>
-      <tr>
-        <td><%= car.make %></td>
-        <td><%= car.model %></td>
-        <td><%= car.year %></td>
-      </tr>
-    <% end %>
+    <tr>
+      <td><%= car.make %></td>
+      <td><%= car.model %></td>
+      <td><%= car.year %></td>
+    </tr>
   <% end %>
 </table>
 

@@ -3,6 +3,7 @@ class CarsController < ApplicationController
 
   get '/cars' do 
     @user = User.find_by(id: session[:user_id])
+    # @car = Car.find_by(id: params[:id])
 
     if logged_in?
       erb :'/cars/cars'
@@ -33,6 +34,7 @@ class CarsController < ApplicationController
   end
 
   get '/cars/:id' do
+    # @user = User.find_by(id: params[:id])
     @car = Car.find_by(id: params[:id])
 
     if logged_in?
