@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     erb :'/users/signup'
   end
 
-  post '/signup' do #M V C
+  post '/signup' do 
     @user = User.new(full_name: params[:full_name], username: params[:username], password: params[:password])
 
     if @user.save
