@@ -1,53 +1,24 @@
-<style>
-table {
-    font-family: times, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-</style>
-
-
 <h1>Welcome, <%= @user.first_name %>!</h1>
 
-<p>Below please find a table of all cars on the database.  To edit any of your enties see the list further below.</p>
+<h3>Your Cars</h3>
 
-<h3>List of All Cars</h3>
-<table>
-  <tr>
-    <th>Car Make</th>
-    <th>Car Model</th>
-    <th>Car Year</th>
-  </tr>
-
-  <% Car.all.each do |car| %>
-    <tr>
-      <td><%= car.make %></td>
-      <td><%= car.model %></td>
-      <td><%= car.year %></td>
-    </tr>
+  <% if current_user.cars.empty? %>
+    <center><h4>No listings available</h4></center>
+  <% else %>
+    <p>Please click the link that you would like to edit or delete.</p>
   <% end %>
-</table>
 
-<h3><%= @user.first_name %>'s List of Cars</h3>
-
-  <p>To edit or delete any of your cars, please click the their respective link.</p>
-
+  
 <ul>
-  <% @user.cars.each do |car| %>
+  <% current_user.cars.each do |car| %>
     <li>
-      <a href="/cars/<%= car.id %>"><%= car.make %> <%= car.model %> (<%= car.year %>)</a>
-    </li>
+      <a href="/cars/<%= car.id %>"><%= car.make_model_year %></a>
+    </li><br>
   <% end %>
 </ul>
 
-<br>
+
+<p><a href="/cars/index">List of All Cars</a></p>
 
 <p><a href="/cars/new">Create New</a> - Creates a new car</p>
 
