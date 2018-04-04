@@ -1,0 +1,34 @@
+<style>
+table {
+    font-family: times, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+</style>
+
+<h2>List of All Cars</h2>
+
+<p>Below please find a table of all cars on the database.  To edit any of your entries <a href="/cars">Go Back</a> to the previous page.</p>
+
+<table>
+  <tr>
+    <th>Car Make</th>
+    <th>Car Model</th>
+    <th>Car Year</th>
+  </tr>
+
+  <% @cars.each do |car| %>
+    <tr>
+      <td><%= car.make.capitalize %></td>
+      <td><%= car.model.capitalize %></td>
+      <td><%= car.year %></td>
+    </tr>
+  <% end %>
+</table>
