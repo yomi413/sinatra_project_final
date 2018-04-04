@@ -5,4 +5,9 @@ class Car < ActiveRecord::Base
   validates :make, presence: true
   validates :model, presence: true
   validates :year, presence: true
+
+  def make_model_year
+    self.make.capitalize + " " + self.model.capitalize + " " + "(" + self.year.to_s + ")"
+  end
+  
 end
