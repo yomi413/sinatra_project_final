@@ -1,9 +1,13 @@
 class CarsController < ApplicationController
   use Rack::Flash
 
+  get '/cars/index' do
+    @cars = Car.all
+    erb :'/cars/index'
+  end
+
   get '/cars' do 
     @user = User.find_by(id: session[:user_id])
-    # @car = Car.find_by(id: params[:id])
 
     if logged_in?
       erb :'/cars/cars'
@@ -23,8 +27,8 @@ class CarsController < ApplicationController
   end
 
   post '/cars' do
-    @car = Car.new(make: params[:make], model: params[:model], year: params[:year], user: current_user)
-
+    # @car = Car.new(make: params[:make], model: params[:model], year: params[:year], user: current_user)
+    @car = current_user.cars.build(make: params[:make], model: params[:model], year: params[:year])
     if @car.save
       redirect to '/cars'
     else
@@ -34,7 +38,6 @@ class CarsController < ApplicationController
   end
 
   get '/cars/:id' do
-    # @user = User.find_by(id: params[:id])
     @car = Car.find_by(id: params[:id])
 
     if logged_in?
