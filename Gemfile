@@ -12,6 +12,7 @@ gem 'pry'
 gem 'bcrypt'
 gem 'tux'
 gem 'rack-flash3', :require => 'rack-flash'
+gem 'rack', '>= 2.0.6'
 
 group :text do 
   gem 'rspec'
