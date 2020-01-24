@@ -13,6 +13,7 @@ gem 'bcrypt'
 gem 'tux'
 gem 'rack-flash3', :require => 'rack-flash'
 gem 'rack', '>= 2.0.6'
+gem 'apartment', '~> 2.2.0'
 
 group :text do 
   gem 'rspec'
