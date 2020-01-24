@@ -1,6 +1,11 @@
 class CarsController < ApplicationController
   use Rack::Flash
 
+  get '/cars/index' do
+    @cars = Car.all
+    erb :'/cars/index'
+  end
+
   get '/cars' do 
     @user = User.find_by(id: session[:user_id])
 
@@ -22,12 +27,12 @@ class CarsController < ApplicationController
   end
 
   post '/cars' do
-    @car = Car.new(make: params[:make], model: params[:model], year: params[:year], user: current_user)
-
+    # @car = Car.new(make: params[:make], model: params[:model], year: params[:year], user: current_user)
+    @car = current_user.cars.build(make: params[:make], model: params[:model], year: params[:year])
     if @car.save
       redirect to '/cars'
     else
-      flash[:message] = "Please fill in the blanks. All information in required."
+      flash[:message] = "Please fill in the blanks. All information is required."
       redirect to '/cars/new'
     end
   end

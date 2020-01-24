@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180303180038) do
+ActiveRecord::Schema.define(version: 20180327011511) do
 
   create_table "cars", force: :cascade do |t|
     t.string "make"
@@ -20,12 +20,10 @@ ActiveRecord::Schema.define(version: 20180303180038) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "full_name"
     t.string "username"
     t.string "password"
     t.string "password_digest"
-    t.string "email"
   end
 
 end

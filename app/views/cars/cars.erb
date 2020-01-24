@@ -1,23 +1,27 @@
 <h1>Welcome, <%= @user.first_name %>!</h1>
 
-<ul>
+<h3>Your Cars</h3>
 
-  <% Car.all.each do |car| %>
-     <% if car.user_id == @user.id %>
-      <li><a href="/cars/<%= car.id %>"><%= car.make %> <%= car.model %> (<%= car.year %>)</a></li>
-    <% else %>
-      <li><%= car.make %> <%= car.model %> (<%= car.year %>)</li>
-    <% end %>
+  <% if current_user.cars.empty? %>
+    <center><h4>No listings available</h4></center>
+  <% else %>
+    <p>Please click the link that you would like to edit or delete.</p>
   <% end %>
 
+  
+<ul>
+  <% current_user.cars.each do |car| %>
+    <li>
+      <a href="/cars/<%= car.id %>"><%= car.make_model_year %></a>
+    </li><br>
+  <% end %>
 </ul>
 
-<br>
+
+<p><a href="/cars/index">List of All Cars</a></p>
 
 <p><a href="/cars/new">Create New</a> - Creates a new car</p>
 
 <p><a href="/logout">Log Out</a> - Logs out current user</p>
 
 <p>Delete Account</a> - Deletes your account</p>
-
-  
